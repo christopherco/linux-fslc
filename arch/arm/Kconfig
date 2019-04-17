@@ -1,6 +1,9 @@
 config ARM
 	bool
 	default y
+	select ARM_PSCI
+	select EFI
+	select EFI_STUB
 	select ARCH_CLOCKSOURCE_DATA
 	select ARCH_HAS_DEVMEM_IS_ALLOWED
 	select ARCH_HAS_ELF_RANDOMIZE

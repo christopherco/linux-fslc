@@ -70,7 +70,6 @@
 		default_bpp = <32>;
 		int_clk = <0>;
 		late_init = <0>;
-		memory-region = <&graphics_mem>;
 		status = "okay";
 	};
 
@@ -81,7 +80,6 @@
 		default_bpp = <16>;
 		int_clk = <0>;
 		late_init = <0>;
-		memory-region = <&graphics_mem>;
 		status = "disabled";
 	};
 
@@ -141,14 +139,6 @@
 	fsl,cpu_pupscr_sw = <0xf>;
 	fsl,cpu_pdnscr_iso2sw = <0x1>;
 	fsl,cpu_pdnscr_iso = <0x1>;
-};
-
-&gpu_3d {
-	memory-region = <&graphics_mem>;
-};
-
-&gpu_2d {
-	memory-region = <&graphics_mem>;
 };
 
 &hdmi {
@@ -269,8 +259,4 @@
 
 &ssi1 {
 	fsl,mode = "i2s-slave";
-};
-
-&vpu_fsl {
-	memory-region = <&graphics_mem>;
 };

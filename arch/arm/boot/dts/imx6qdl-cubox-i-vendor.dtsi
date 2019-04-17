@@ -68,7 +68,6 @@
 		default_bpp = <32>;
 		int_clk = <0>;
 		late_init = <0>;
-		memory-region = <&graphics_mem>;
 		status = "okay";
 	};
 
@@ -96,14 +95,6 @@
 	dcic_id = <0>;
 	dcic_mux = "dcic-hdmi";
 	status = "okay";
-};
-
-&gpu_3d {
-	memory-region = <&graphics_mem>;
-};
-
-&gpu_2d {
-	memory-region = <&graphics_mem>;
 };
 
 &hdmi {
@@ -145,8 +136,4 @@
 		reg = <0x68>;
 		nxp,12p5_pf;
 	};
-};
-
-&vpu_fsl {
-	memory-region = <&graphics_mem>;
 };

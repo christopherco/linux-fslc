@@ -13,9 +13,12 @@
 #include <dt-bindings/clock/imx6qdl-clock.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 
-#include "skeleton.dtsi"
+//#include "skeleton.dtsi"
 
 / {
+	#address-cells = <1>;
+	#size-cells = <1>;
+
 	aliases {
 		ethernet0 = &fec;
 		can0 = &can1;
@@ -46,6 +49,11 @@
 		spi3 = &ecspi4;
 		usbphy0 = &usbphy1;
 		usbphy1 = &usbphy2;
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x10000000 0x80000000>;
 	};
 
 	clocks {
@@ -202,17 +210,6 @@
 			reg = <0x00a01000 0x1000>,
 			      <0x00a00100 0x100>;
 			interrupt-parent = <&intc>;
-		};
-
-		L2: l2-cache@00a02000 {
-			compatible = "arm,pl310-cache";
-			reg = <0x00a02000 0x1000>;
-			interrupts = <0 92 IRQ_TYPE_LEVEL_HIGH>;
-			cache-unified;
-			cache-level = <2>;
-			arm,tag-latency = <4 2 3>;
-			arm,data-latency = <4 2 3>;
-			arm,shared-override;
 		};
 
 		pcie: pcie@0x01000000 {

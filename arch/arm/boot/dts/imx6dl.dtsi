@@ -25,7 +25,6 @@
 			compatible = "arm,cortex-a9";
 			device_type = "cpu";
 			reg = <0>;
-			next-level-cache = <&L2>;
 			operating-points = <
 				/* kHz    uV */
 				996000  1250000
@@ -59,7 +58,6 @@
 			compatible = "arm,cortex-a9";
 			device_type = "cpu";
 			reg = <1>;
-			next-level-cache = <&L2>;
 		};
 	};
 

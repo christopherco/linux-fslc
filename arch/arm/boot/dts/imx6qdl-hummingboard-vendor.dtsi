@@ -69,7 +69,6 @@
 		default_bpp = <32>;
 		int_clk = <0>;
 		late_init = <0>;
-		memory-region = <&graphics_mem>;
 		status = "okay";
         };
 
@@ -80,7 +79,6 @@
                 default_bpp = <16>;
                 int_clk = <0>;
                 late_init = <0>;
-		memory-region = <&graphics_mem>;
                 status = "disabled";
         };
 
@@ -131,14 +129,6 @@
 		reg = <0>;
 		spi-max-frequency = <20000000>;
 	};
-};
-
-&gpu_3d {
-	memory-region = <&graphics_mem>;
-};
-
-&gpu_2d {
-	memory-region = <&graphics_mem>;
 };
 
 &hdmi {
@@ -255,9 +245,5 @@
 	lanes = <2>;
 	mipi_dphy_clk = /bits/ 8 <0x28>;
 	status = "okay";
-};
-
-&vpu_fsl {
-	memory-region = <&graphics_mem>;
 };
 
